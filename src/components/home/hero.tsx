@@ -1,20 +1,30 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { ArrowRight, Zap } from "lucide-react";
 import { ButtonLink } from "@/components/ui/button";
 import { HeroScene } from "@/components/three/hero-scene";
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden">
-      <div className="aurora-bg" />
-      <div className="noise-overlay" />
-      <div className="solar-grid absolute inset-0 opacity-70" />
-      <div className="glow-orb absolute -left-40 top-10 h-96 w-96 rounded-full" />
-      <div className="glow-orb absolute -right-32 top-40 h-72 w-72 rounded-full opacity-70" />
+    <section className="relative isolate overflow-hidden bg-[#110c3f]">
+      <Image
+        src="/saw.png"
+        alt=""
+        fill
+        priority
+        sizes="100vw"
+        className="pointer-events-none absolute inset-0 z-0 h-full w-full object-contain object-center"
+      />
+      <div className="pointer-events-none absolute inset-0 z-[1] bg-[linear-gradient(90deg,rgb(10_7_36_/_0.78),rgb(10_7_36_/_0.2)_58%,rgb(10_7_36_/_0.42))]" />
+      <div className="aurora-bg relative z-[2]" />
+      <div className="noise-overlay relative z-[2]" />
+      <div className="solar-grid absolute inset-0 z-[2] opacity-40" />
+      <div className="glow-orb absolute -left-40 top-10 z-[2] h-96 w-96 rounded-full" />
+      <div className="glow-orb absolute -right-32 top-40 z-[2] h-72 w-72 rounded-full opacity-70" />
 
-      <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-4 py-20 sm:px-6 lg:grid-cols-2 lg:px-8 lg:py-28">
+      <div className="relative z-10 mx-auto grid max-w-7xl items-center gap-12 px-4 py-20 sm:px-6 lg:grid-cols-2 lg:px-8 lg:py-28">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
