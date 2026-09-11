@@ -9,14 +9,32 @@ import { HeroScene } from "@/components/three/hero-scene";
 export function Hero() {
   return (
     <section className="relative isolate overflow-hidden bg-[#110c3f]">
-      <Image
-        src="/saw.png"
-        alt=""
-        fill
-        priority
-        sizes="100vw"
-        className="pointer-events-none absolute inset-0 z-0 h-full w-full object-contain object-center"
-      />
+      {/* Desktop & iPad (Tablet) Background */}
+      <div className="absolute inset-0 z-0 hidden md:block">
+        <Image
+          src="/saw.png"
+          alt="NovaSunHub Hero Background Desktop"
+          fill
+          priority
+          sizes="100vw"
+          quality={100}
+          className="pointer-events-none object-cover object-center"
+        />
+      </div>
+
+      {/* Mobile Background */}
+      <div className="absolute inset-0 z-0 md:hidden">
+        <Image
+          src="/raq.png"
+          alt="NovaSunHub Hero Background Mobile"
+          fill
+          priority
+          sizes="100vw"
+          quality={100}
+          className="pointer-events-none object-cover object-center"
+        />
+      </div>
+
       <div className="pointer-events-none absolute inset-0 z-[1] bg-[linear-gradient(90deg,rgb(10_7_36_/_0.78),rgb(10_7_36_/_0.2)_58%,rgb(10_7_36_/_0.42))]" />
       <div className="aurora-bg relative z-[2]" />
       <div className="noise-overlay relative z-[2]" />
